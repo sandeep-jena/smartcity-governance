@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+@import "https://unpkg.com/leaflet@1.9.4/dist/leaflet.css";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --green-dark:    #1a4731;
+  --green-mid:     #2d6a4f;
+  --green-accent:  #4caf7d;
+  --green-light:   #e0ede5;
+  --green-pale:    #f0f7f0;
+  --gold:          #f0c040;
+  --text-dark:     #1a2e1f;
+  --text-muted:    #6b9e80;
+  --white:         #ffffff;
+  --danger:        #e74c3c;
+  --warning:       #f39c12;
+  --sidebar-width: 240px;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background-color: var(--green-pale);
+  color: var(--text-dark);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-24px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(24px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.05); }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position:  200% 0; }
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Utility animation classes */
+.anim-fadeInUp    { animation: fadeInUp    0.5s ease both; }
+.anim-fadeInLeft  { animation: fadeInLeft  0.5s ease both; }
+.anim-fadeInRight { animation: fadeInRight 0.5s ease both; }
+.anim-scaleIn     { animation: scaleIn     0.4s ease both; }
+.anim-slideDown   { animation: slideDown   0.4s ease both; }
+
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+.delay-4 { animation-delay: 0.4s; }
+.delay-5 { animation-delay: 0.5s; }
+
+/* Hover effects */
+.hover-lift {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(26,71,49,0.15);
+}
+
+.hover-green {
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.hover-green:hover {
+  background: #4caf7d !important;
+  color: #fff !important;
+}
